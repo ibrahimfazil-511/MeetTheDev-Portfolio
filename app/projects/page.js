@@ -28,6 +28,54 @@ import { PageTransition } from "@/components/PageTransition";
 
 const PROJECTS_DATA = [
   {
+    id: "royal-spice-restaurant",
+    title: "Royal Spice Restaurant",
+    subtitle: "Zero-Commission Direct WhatsApp Ordering System",
+    category: "restaurant",
+    categoryLabel: "Restaurant & Retail Platform",
+    description:
+      "A high-conversion turnkey web application built for restaurants to bypass 25-30% food aggregator platform commissions. Features an interactive categorized digital food menu, real-time cart state management, and direct formatted WhatsApp order dispatch.",
+    liveUrl: "https://demo-restaurant-website-theta.vercel.app/",
+    githubUrl: "https://github.com/ibrahimfazil-511",
+    primaryScreenshot:
+      "https://api.microlink.io/?url=https%3A%2F%2Fdemo-restaurant-website-theta.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitForTimeout=3000",
+    fallbackScreenshot:
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fdemo-restaurant-website-theta.vercel.app%2F?w=1280&h=800",
+    tags: [
+      "Zero Commission",
+      "Direct WhatsApp Dispatch",
+      "React 18",
+      "Next.js 14",
+      "Tailwind CSS",
+      "QR Digital Menu",
+      "Vercel Edge",
+    ],
+    metrics: [
+      { label: "Commission", value: "0% Fees" },
+      { label: "Order Routing", value: "WhatsApp API" },
+      { label: "Lighthouse", value: "99/100 Speed" },
+    ],
+    architecture: {
+      problem:
+        "Local restaurants surrender 25% to 30% of every order to third-party delivery aggregators, encounter high customer drop-off on bloated native apps, and lose direct customer relationships.",
+      solution:
+        "Engineered a lightning-fast, zero-commission web platform that converts mobile visitors into direct paying customers. Features a mobile-first digital food catalog, instant cart drawer with add-ons, and structured receipt generation sent straight to the restaurant's WhatsApp phone number (0334 2850819).",
+      techStack: [
+        "Next.js 14 App Router for sub-second page transitions & mobile SEO",
+        "React state machines for zero-latency item customizations & quantity increments",
+        "Automated WhatsApp URL Encoder generating complete order delivery receipts",
+        "Tailwind CSS responsive design optimized for smartphones, tablets & desktop",
+        "Vercel Edge Network for instant worldwide caching and 99.9% uptime",
+      ],
+      keyFeatures: [
+        "Categorized digital food menu with appetizing visual cards & price tags",
+        "Real-time slide-out cart drawer with dynamic subtotal recalculation",
+        "One-click direct WhatsApp checkout routing full order breakdown to staff",
+        "100% direct customer data ownership with zero third-party commission cuts",
+      ],
+    },
+  },
+  {
     id: "hcm-lite",
     title: "HCM Lite Work",
     subtitle: "Enterprise Human Capital Management Platform",
@@ -116,6 +164,11 @@ export default function ProjectsPage() {
 
   const categories = [
     { id: "all", label: "All Deployments", count: PROJECTS_DATA.length },
+    {
+      id: "restaurant",
+      label: "Restaurant & Retail",
+      count: PROJECTS_DATA.filter((p) => p.category === "restaurant").length,
+    },
     {
       id: "saas",
       label: "Full-Stack SaaS",
@@ -263,27 +316,28 @@ export default function ProjectsPage() {
                           rel="noopener noreferrer"
                           className="w-full xs:w-auto"
                         >
-                          <span>Visit Live App</span>
+                          <span>Live Preview (Vercel)</span>
                           <ExternalLink className="w-3.5 h-3.5" />
                         </Button>
-
-                        <button
-                          onClick={() => setSelectedProjectForModal(project)}
-                          className="flex-1 xs:flex-initial px-3.5 py-2 rounded-xl border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors flex items-center justify-center gap-1.5"
-                        >
-                          <Info className="w-3.5 h-3.5" />
-                          <span>System Architecture</span>
-                        </button>
 
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 rounded-xl border border-zinc-300 dark:border-white/10 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors flex-shrink-0"
-                          title="View on GitHub"
+                          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-zinc-300 dark:border-white/15 hover:border-black dark:hover:border-white text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors"
+                          title="View GitHub Repository"
                         >
                           <Github className="w-4 h-4" />
+                          <span>GitHub Repo</span>
                         </a>
+
+                        <button
+                          onClick={() => setSelectedProjectForModal(project)}
+                          className="flex-1 xs:flex-initial px-3.5 py-2 rounded-xl border border-zinc-300 dark:border-white/10 hover:border-zinc-500 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors flex items-center justify-center gap-1.5"
+                        >
+                          <Info className="w-3.5 h-3.5" />
+                          <span>Architecture</span>
+                        </button>
                       </div>
                     </div>
 

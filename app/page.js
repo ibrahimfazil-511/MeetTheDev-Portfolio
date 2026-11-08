@@ -45,10 +45,10 @@ const TECH_PILLS = [
 ];
 
 const METRICS = [
-  { value: "100%", label: "Edge Production Uptime", desc: "Vercel Global Anycast & Cloud" },
-  { value: "< 0.6s", label: "Sub-Second FCP", desc: "Optimized Core Web Vitals" },
-  { value: "99.9%", label: "API SLA & Reliability", desc: "Predictable, resilient endpoints" },
-  { value: "1440x900", label: "Real Desktop Views", desc: "Pixel-perfect fluid responsiveness" },
+  { value: "12+", label: "Production Deployed Apps", desc: "Vercel Global Anycast & Edge" },
+  { value: "0% Cut", label: "Zero-Commission Orders", desc: "Direct WhatsApp Client Systems" },
+  { value: "< 0.5s", label: "Sub-Second FCP", desc: "Optimized Core Web Vitals" },
+  { value: "99.9%", label: "High-Throughput Uptime", desc: "Predictable, resilient endpoints" },
 ];
 
 const MARQUEE_ITEMS = [
@@ -113,12 +113,25 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-sm sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8 px-1 sm:px-0"
+                className="text-sm sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-4 px-1 sm:px-0"
               >
                 Hi, I&apos;m <strong className="text-zinc-900 dark:text-white font-semibold">Ibrahim Aftab</strong>.
                 I specialize in end-to-end web engineering: high-performance React &amp; Next.js 14 architectures,
                 scalable Node.js / REST APIs, relational &amp; document databases (PostgreSQL, MongoDB, Prisma), custom Shadcn UI systems, and fluid Framer Motion micro-interactions.
               </motion.p>
+
+              {/* Local Business & High-Impact Client Value Proposition */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="mb-8"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-100/90 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 text-xs sm:text-sm font-medium text-zinc-800 dark:text-zinc-200 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+                  <span>Specializing in High-Performance Next.js Web Apps &amp; Direct WhatsApp Ordering Solutions for Local Businesses.</span>
+                </div>
+              </motion.div>
 
               {/* Action Buttons */}
               <motion.div
@@ -139,7 +152,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="secondary"
-                  href="/services"
+                  href="/services#estimator"
                   className="w-full sm:w-auto"
                 >
                   <span>Services & Timeline Estimator</span>
@@ -252,8 +265,77 @@ export default function HomePage() {
             </div>
 
             {/* Flagship Projects Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-              {/* Project 1: HCM Lite Work */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Project 1: Royal Spice Restaurant Direct Ordering */}
+              <Card className="p-5 sm:p-6 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-white/10 text-zinc-900 dark:text-white border border-zinc-200 dark:border-white/10 text-xs font-mono font-semibold">
+                      Restaurant &amp; Retail • Zero Commission
+                    </span>
+                    <span className="text-xs text-zinc-900 dark:text-white font-mono font-medium flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      Live on Vercel
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-2">
+                    Royal Spice Restaurant
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 mb-5 leading-relaxed">
+                    Direct-to-WhatsApp ordering platform engineered to eliminate 25-30% food aggregator fees. Features an interactive mobile digital menu, instant cart drawer, and sub-second checkout.
+                  </p>
+
+                  {/* Browser Mockup with Real Desktop Screenshot + Fallback */}
+                  <div className="mb-5">
+                    <ProjectThumbnail
+                      title="Royal Spice Restaurant"
+                      liveUrl="https://demo-restaurant-website-theta.vercel.app/"
+                      primaryScreenshot="https://api.microlink.io/?url=https%3A%2F%2Fdemo-restaurant-website-theta.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitForTimeout=3000"
+                      fallbackScreenshot="https://s0.wp.com/mshots/v1/https%3A%2F%2Fdemo-restaurant-website-theta.vercel.app%2F?w=1280&h=800"
+                    />
+                  </div>
+
+                  {/* Tech stack tags */}
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {["Zero Commission", "Direct WhatsApp", "Next.js 14", "React 18", "Tailwind CSS", "QR Digital Menu"].map(
+                      (tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-[11px] font-mono text-zinc-700 dark:text-zinc-300"
+                        >
+                          {tech}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
+
+                {/* Card CTA Actions */}
+                <div className="flex items-center justify-between pt-4 border-t border-zinc-100 dark:border-white/10">
+                  <a
+                    href="https://demo-restaurant-website-theta.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-zinc-900 dark:text-white hover:underline transition-colors"
+                  >
+                    <span>Visit Live Site</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+
+                  <a
+                    href="https://github.com/ibrahimfazil-511"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>GitHub Repo</span>
+                  </a>
+                </div>
+              </Card>
+
+              {/* Project 2: HCM Lite Work */}
               <Card className="p-5 sm:p-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -266,7 +348,7 @@ export default function HomePage() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-2">
                     HCM Lite Work Platform
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 mb-5 leading-relaxed">
@@ -323,7 +405,7 @@ export default function HomePage() {
                 </div>
               </Card>
 
-              {/* Project 2: Medicure Pharmacy */}
+              {/* Project 3: Medicure Pharmacy */}
               <Card className="p-5 sm:p-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -336,7 +418,7 @@ export default function HomePage() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-2">
                     Medicure Pharmacy
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 mb-5 leading-relaxed">

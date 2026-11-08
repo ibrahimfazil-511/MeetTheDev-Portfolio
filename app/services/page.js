@@ -21,6 +21,8 @@ import {
   Sliders,
   Database,
   Server,
+  UtensilsCrossed,
+  MessageCircle,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -29,6 +31,20 @@ import { Accordion } from "@/components/ui/Accordion";
 import { PageTransition } from "@/components/PageTransition";
 
 const SERVICES_LIST = [
+  {
+    id: "restaurant-ordering",
+    title: "Zero-Commission Direct Ordering Systems for Restaurants & Retail",
+    description:
+      "Turnkey direct ordering platforms engineered for restaurants and local dining businesses. Eliminate 25-30% aggregator platform fees (like Foodpanda/Deliveroo) with instant WhatsApp order routing, interactive mobile digital menus, and sub-second checkout.",
+    icon: UtensilsCrossed,
+    features: [
+      "Direct-to-WhatsApp Checkout & Order Routing",
+      "Zero Third-Party Commission (Save 25-30% Per Order)",
+      "Mobile-First Digital QR Menu & Categorized Catalog",
+      "Sub-Second Next.js 14 Speed (<0.5s FCP)",
+    ],
+    highlight: "High Client ROI",
+  },
   {
     id: "fullstack-nextjs",
     title: "Full-Stack React 18 & Next.js 14 Applications",
@@ -56,20 +72,6 @@ const SERVICES_LIST = [
       "Redis Caching & Secure Session Stores",
     ],
     highlight: "Backend & Data",
-  },
-  {
-    id: "design-systems",
-    title: "Interactive UI/UX & Shadcn Design Systems",
-    description:
-      "Pixel-perfect, accessible component libraries tailored to your brand identity. Featuring seamless Dark/Light mode and fluid Framer Motion micro-interactions.",
-    icon: Layout,
-    features: [
-      "Custom Shadcn UI Primitive Styling",
-      "Framer Motion Physics & Micro-Interactions",
-      "Dark & Light Mode Transitions",
-      "Accessible Semantic HTML & ARIA Standards",
-    ],
-    highlight: "Design Engineering",
   },
   {
     id: "cloud-devops",
@@ -116,7 +118,7 @@ const FAQ_ITEMS = [
 ];
 
 export default function ServicesPage() {
-  const [projectType, setProjectType] = useState("saas");
+  const [projectType, setProjectType] = useState("restaurant");
   const [animationLevel, setAnimationLevel] = useState("advanced");
   const [hasAuth, setHasAuth] = useState(true);
   const [hasDatabase, setHasDatabase] = useState(true);
@@ -125,31 +127,33 @@ export default function ServicesPage() {
 
   const PROJECT_TYPES = [
     {
-      id: "landing",
-      name: "High-Converting Product Experience",
-      basePrice: 750,
-      baseDays: 4,
-      desc: "Hero section, interactive demo showcases, FAQ, CTA, and contact integration.",
+      id: "restaurant",
+      name: "Zero-Commission Restaurant & Retail Ordering",
+      baseDays: 5,
+      desc: "Direct WhatsApp checkout, QR digital menu, cart drawer, sub-second routing, 0% platform fee.",
     },
     {
       id: "saas",
       name: "SaaS Application & Dashboard",
-      basePrice: 1950,
       baseDays: 14,
       desc: "Full dashboard, charts, table filtering, auth layout, and user settings.",
     },
     {
       id: "ecommerce",
       name: "E-Commerce / Digital Pharmacy",
-      basePrice: 2250,
-      baseDays: 18,
+      baseDays: 16,
       desc: "Catalog, prescription/product modals, cart, checkout, and inventory views.",
+    },
+    {
+      id: "landing",
+      name: "High-Converting Product Experience",
+      baseDays: 4,
+      desc: "Hero section, interactive demo showcases, FAQ, CTA, and contact integration.",
     },
     {
       id: "custom",
       name: "Custom Multi-Page Web Platform",
-      basePrice: 2600,
-      baseDays: 20,
+      baseDays: 18,
       desc: "Bespoke architectural logic, dynamic routing, CMS, and multi-step workflows.",
     },
   ];
@@ -157,41 +161,25 @@ export default function ServicesPage() {
   const calculation = useMemo(() => {
     const selectedType = PROJECT_TYPES.find((t) => t.id === projectType) || PROJECT_TYPES[0];
 
-    let price = selectedType.basePrice;
     let days = selectedType.baseDays;
 
     if (animationLevel === "subtle") {
-      price += 100;
       days += 1;
     } else if (animationLevel === "advanced") {
-      price += 250;
       days += 2;
     } else if (animationLevel === "ultra") {
-      price += 500;
       days += 4;
     }
 
-    if (hasAuth) {
-      price += 200;
-      days += 2;
-    }
-    if (hasDatabase) {
-      price += 300;
-      days += 3;
-    }
-    if (hasSEO) {
-      price += 150;
-      days += 1;
-    }
+    if (hasAuth) days += 2;
+    if (hasDatabase) days += 3;
+    if (hasSEO) days += 1;
 
     if (urgency === "fast") {
-      price = Math.round(price * 1.25);
       days = Math.max(3, Math.round(days * 0.65));
     }
 
     return {
-      priceLow: Math.round(price * 0.95),
-      priceHigh: Math.round(price * 1.1),
       days,
       selectedType,
     };
@@ -268,16 +256,16 @@ export default function ServicesPage() {
         </div>
 
         {/* DYNAMIC INTERACTIVE ESTIMATOR */}
-        <section className="mb-24">
+        <section id="estimator" className="mb-24 scroll-mt-24">
           <div className="max-w-3xl mb-10">
             <Badge variant="outline" className="mb-2">
-              <Calculator className="w-3.5 h-3.5 mr-1" /> Dynamic Estimation Engine
+              <Calculator className="w-3.5 h-3.5 mr-1" /> Dynamic Specification Engine
             </Badge>
             <h2 className="text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-              Interactive Project Cost & Timeline Estimator
+              Interactive Scope & Timeline Estimator
             </h2>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-              Customize your project scope to receive an immediate transparent timeline and investment estimate.
+              Select your project requirements and architecture options to generate a customized technical roadmap and delivery timeline.
             </p>
           </div>
 
@@ -419,7 +407,7 @@ export default function ServicesPage() {
                         : "border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-300"
                     }`}
                   >
-                    ⚡ Fast-Track Priority (+25%)
+                    ⚡ Fast-Track Priority (Accelerated)
                   </button>
                 </div>
               </div>
@@ -430,26 +418,30 @@ export default function ServicesPage() {
               <div className="sticky top-28 p-6 sm:p-8 rounded-2xl border border-zinc-300 dark:border-white/15 bg-gradient-to-b from-[#14151B] to-[#08090C] text-white shadow-2xl space-y-6">
                 <div>
                   <span className="text-xs font-mono text-zinc-400 font-semibold uppercase tracking-wider">
-                    Dynamic Estimate
+                    Dynamic Scope Specification
                   </span>
                   <h3 className="text-2xl font-extrabold mt-1">
                     {calculation.selectedType.name}
                   </h3>
                 </div>
 
-                {/* Big Estimated Figures */}
+                {/* Scope Status & Timeline (NO DOLLAR PRICING) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
                   <div>
                     <span className="text-[11px] font-mono text-zinc-400 block mb-1">
-                      Estimated Investment
+                      Scope Status
                     </span>
-                    <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-mono break-words">
-                      ${calculation.priceLow} - ${calculation.priceHigh}
+                    <span className="text-sm sm:text-base font-bold text-emerald-400 font-mono flex items-center gap-1.5 pt-0.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Ready to Build
+                    </span>
+                    <span className="text-[10px] text-zinc-400 font-mono block mt-1">
+                      Direct WhatsApp Brief
                     </span>
                   </div>
                   <div>
                     <span className="text-[11px] font-mono text-zinc-400 block mb-1">
-                      Timeline
+                      Estimated Timeline
                     </span>
                     <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white flex items-center gap-1.5 font-mono">
                       <Clock className="w-5 h-5 text-zinc-300 flex-shrink-0" />
@@ -464,53 +456,65 @@ export default function ServicesPage() {
                     Package Inclusions:
                   </div>
                   <div className="flex items-center gap-2 text-zinc-300">
-                    <Check className="w-4 h-4 text-white" />
+                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                     <span>Pure JavaScript (ES6+) Next.js 14 Architecture</span>
                   </div>
                   <div className="flex items-center gap-2 text-zinc-300">
-                    <Check className="w-4 h-4 text-white" />
+                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                     <span>Motion: {animationLevel.toUpperCase()}</span>
                   </div>
                   {hasAuth && (
                     <div className="flex items-center gap-2 text-zinc-300">
-                      <Check className="w-4 h-4 text-white" />
+                      <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                       <span>Protected Routes & Authentication</span>
                     </div>
                   )}
                   {hasDatabase && (
                     <div className="flex items-center gap-2 text-zinc-300">
-                      <Check className="w-4 h-4 text-white" />
+                      <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                       <span>Database & Dynamic API Endpoints</span>
                     </div>
                   )}
                   {hasSEO && (
                     <div className="flex items-center gap-2 text-zinc-300">
-                      <Check className="w-4 h-4 text-white" />
+                      <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                       <span>99+ Lighthouse Score & Complete SEO Setup</span>
                     </div>
                   )}
                   <div className="flex items-center gap-2 text-zinc-300">
-                    <Check className="w-4 h-4 text-white" />
+                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                     <span>Direct Vercel Deployment & SSL</span>
                   </div>
                 </div>
 
-                {/* Book Package */}
-                <Link
-                  href={`/contact?service=${encodeURIComponent(
-                    calculation.selectedType.name
-                  )}&budget=${encodeURIComponent(
-                    `$${calculation.priceLow} - $${calculation.priceHigh}`
-                  )}&timeline=${encodeURIComponent(`~${calculation.days} Days`)}`}
-                  className="w-full py-3.5 px-6 rounded-xl text-center font-bold text-sm text-black bg-white hover:bg-zinc-200 shadow-[0_0_20px_-3px_rgba(255,255,255,0.4)] transition-all flex items-center justify-center gap-2"
-                >
-                  <Sparkles className="w-4 h-4 text-black" />
-                  <span>Lock In This Package</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                {/* Book Package / Lock In Package Actions */}
+                <div className="space-y-2.5 pt-2">
+                  <Link
+                    href={`/contact?service=${encodeURIComponent(
+                      calculation.selectedType.name
+                    )}&timeline=${encodeURIComponent(`~${calculation.days} Days`)}`}
+                    className="w-full py-3.5 px-6 rounded-xl text-center font-bold text-sm text-black bg-white hover:bg-zinc-200 shadow-[0_0_20px_-3px_rgba(255,255,255,0.4)] transition-all flex items-center justify-center gap-2"
+                  >
+                    <Sparkles className="w-4 h-4 text-black" />
+                    <span>Lock In This Package</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+
+                  <a
+                    href={`https://wa.me/923342850819?text=${encodeURIComponent(
+                      `Hi Ibrahim, I'd like to consult on the "${calculation.selectedType.name}" package (~${calculation.days} Days timeline). Here are my requirements:`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 px-4 rounded-xl text-center font-bold text-xs text-black bg-[#25D366] hover:bg-[#1EBE5D] shadow-md transition-all flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-black" />
+                    <span>Instant WhatsApp Consultation (0334 2850819)</span>
+                  </a>
+                </div>
 
                 <p className="text-[11px] text-zinc-400 text-center font-mono">
-                  Opens contact briefing form with your calculated package pre-filled.
+                  Opens contact briefing form to submit your phone number and project requirements directly.
                 </p>
               </div>
             </div>

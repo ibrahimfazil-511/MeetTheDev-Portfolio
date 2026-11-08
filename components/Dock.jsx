@@ -2,7 +2,17 @@
 
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Triangle, HeartPulse, Users, ExternalLink, PenTool } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Triangle,
+  HeartPulse,
+  Users,
+  ExternalLink,
+  PenTool,
+  UtensilsCrossed,
+  MessageCircle,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const DOCK_ITEMS = [
@@ -14,18 +24,32 @@ const DOCK_ITEMS = [
     icon: Github,
   },
   {
-    id: "signature",
-    title: "Developer Signature",
-    subtitle: "Verified Architect Seal",
-    href: "/#signature",
-    icon: PenTool,
+    id: "restaurant",
+    title: "Royal Spice Demo",
+    subtitle: "Zero-Commission Restaurant",
+    href: "https://demo-restaurant-website-theta.vercel.app/",
+    icon: UtensilsCrossed,
   },
   {
-    id: "linkedin",
-    title: "LinkedIn Profile",
-    subtitle: "Ibrahim Aftab",
-    href: "https://www.linkedin.com/in/ibrahim-aftab-b47879387/",
-    icon: Linkedin,
+    id: "whatsapp",
+    title: "WhatsApp Hotline",
+    subtitle: "0334 2850819",
+    href: "https://wa.me/923342850819",
+    icon: MessageCircle,
+  },
+  {
+    id: "hcm",
+    title: "HCM Lite Work",
+    subtitle: "Enterprise HR SaaS",
+    href: "https://hcm-lite-work-alpha.vercel.app/",
+    icon: Users,
+  },
+  {
+    id: "medicure",
+    title: "Medicure Pharmacy",
+    subtitle: "Healthcare E-Commerce",
+    href: "https://medicure-pharmacy-two.vercel.app/",
+    icon: HeartPulse,
   },
   {
     id: "vercel",
@@ -35,18 +59,18 @@ const DOCK_ITEMS = [
     icon: Triangle,
   },
   {
-    id: "hcm",
-    title: "HCM Lite Work",
-    subtitle: "Flagship HR SaaS",
-    href: "https://hcm-lite-work-alpha.vercel.app/",
-    icon: Users,
+    id: "linkedin",
+    title: "LinkedIn Profile",
+    subtitle: "Ibrahim Aftab",
+    href: "https://www.linkedin.com/in/ibrahim-aftab-b47879387/",
+    icon: Linkedin,
   },
   {
-    id: "medicure",
-    title: "Medicure Pharmacy",
-    subtitle: "Flagship E-Pharmacy",
-    href: "https://medicure-pharmacy-two.vercel.app/",
-    icon: HeartPulse,
+    id: "signature",
+    title: "Developer Signature",
+    subtitle: "Verified Architect Seal",
+    href: "/#signature",
+    icon: PenTool,
   },
 ];
 

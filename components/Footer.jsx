@@ -92,6 +92,22 @@ export function Footer() {
             </h4>
             <div className="space-y-2 text-sm">
               <a
+                href="https://demo-restaurant-website-theta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 dark:hover:bg-white/5 border border-transparent hover:border-zinc-200 dark:border-white/10 transition-all"
+              >
+                <div>
+                  <div className="font-semibold text-zinc-900 dark:text-white group-hover:text-zinc-300 transition-colors">
+                    Royal Spice Restaurant
+                  </div>
+                  <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-mono">
+                    Zero-Commission WhatsApp Direct Ordering
+                  </div>
+                </div>
+                <ExternalLink className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition-colors" />
+              </a>
+              <a
                 href="https://hcm-lite-work-alpha.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"

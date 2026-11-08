@@ -21,6 +21,9 @@ import {
   AlertCircle,
   RefreshCw,
   Terminal,
+  Phone,
+  MessageCircle,
+  ArrowRight,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -28,48 +31,49 @@ import { Card } from "@/components/ui/Card";
 import { PageTransition } from "@/components/PageTransition";
 
 const SUBJECT_OPTIONS = [
+  "Restaurant Ordering System",
+  "Custom SaaS / Web App",
   "Senior Full Stack Role",
-  "Architecture Consultation",
-  "Contract / Project",
   "General Inquiry",
 ];
 
-const BUDGET_RANGES = [
-  "< $1,500",
-  "$1,500 - $3,500",
-  "$3,500 - $7,000",
-  "$7,000+",
-  "Equity / Retainer",
+const TIMELINE_PREFERENCES = [
+  "Immediate (ASAP)",
+  "1 - 2 Weeks",
+  "2 - 4 Weeks",
+  "Flexible",
 ];
 
 function ContactContent() {
   const searchParams = useSearchParams();
 
   const prefilledService = searchParams?.get("service") || "";
-  const prefilledBudget = searchParams?.get("budget") || "";
   const prefilledTimeline = searchParams?.get("timeline") || "";
 
-  const [subject, setSubject] = useState("Contract / Project");
+  const [subject, setSubject] = useState(
+    prefilledService ? "Restaurant Ordering System" : "Contract / Project"
+  );
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [budget, setBudget] = useState(prefilledBudget || "$1,500 - $3,500");
+  const [timeline, setTimeline] = useState(prefilledTimeline || "1 - 2 Weeks");
   const [message, setMessage] = useState("");
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   useEffect(() => {
     if (prefilledService) {
-      setSubject("Contract / Project");
       if (!message) {
         setMessage(
-          `Hi Ibrahim, I'm interested in booking the "${prefilledService}" architecture package. Expected Timeline: ${prefilledTimeline}. Estimated Investment: ${prefilledBudget}. Let's schedule an engineering sync!`
+          `Hi Ibrahim, I'm interested in the "${prefilledService}" package. Expected Timeline: ${prefilledTimeline || "Standard"}. Please review my requirements and connect with me on WhatsApp.`
         );
       }
     }
-  }, [prefilledService, prefilledBudget, prefilledTimeline, message]);
+  }, [prefilledService, prefilledTimeline, message]);
 
   const copyEmailToClipboard = () => {
     navigator.clipboard.writeText("ibrahimfazil511@gmail.com");
@@ -77,16 +81,27 @@ function ContactContent() {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
+  const copyPhoneToClipboard = () => {
+    navigator.clipboard.writeText("03342850819");
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
+  };
+
   const validate = () => {
     const newErrors = {};
-    if (!name.trim()) newErrors.name = "Please enter your name";
+    if (!name.trim()) newErrors.name = "Please enter your name / organization";
+    if (!phone.trim()) {
+      newErrors.phone = "Please enter your WhatsApp / Phone number";
+    } else if (phone.trim().length < 7) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
     if (!email.trim()) {
-      newErrors.email = "Please enter your email";
+      newErrors.email = "Please enter your email address";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (!message.trim() || message.length < 10) {
-      newErrors.message = "Message must be at least 10 characters long";
+    if (!message.trim() || message.length < 8) {
+      newErrors.message = "Please briefly describe your project requirement";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -98,29 +113,45 @@ function ContactContent() {
 
     setIsSubmitting(true);
 
-    // Simulate transmission
+    // Prepare structured WhatsApp Brief Payload for 03342850819
+    const waText =
+      `*New Project Brief - MeetTheDev*%0A%0A` +
+      `👤 *Name / Org:* ${encodeURIComponent(name)}%0A` +
+      `📱 *Phone / WhatsApp:* ${encodeURIComponent(phone)}%0A` +
+      `📧 *Email:* ${encodeURIComponent(email)}%0A` +
+      `💼 *Service Scope:* ${encodeURIComponent(prefilledService || subject)}%0A` +
+      `⏱️ *Expected Timeline:* ${encodeURIComponent(timeline || prefilledTimeline || "Standard")}%0A%0A` +
+      `📋 *Project Requirements Brief:*%0A${encodeURIComponent(message)}%0A%0A` +
+      `_Sent via meetthedev-portfolio.vercel.app_`;
+
+    const waUrl = `https://wa.me/923342850819?text=${waText}`;
+
+    // Automatically trigger WhatsApp in new tab
+    if (typeof window !== "undefined") {
+      window.open(waUrl, "_blank");
+    }
+
     setTimeout(async () => {
       setIsSubmitting(false);
       setIsSubmitted(true);
 
-      // Trigger Silver/Monochrome Confetti dynamically without SSR issues
+      // Trigger Celebration Confetti
       try {
         const confetti = (await import("canvas-confetti")).default;
         confetti({
-          particleCount: 100,
-          spread: 70,
+          particleCount: 110,
+          spread: 75,
           origin: { y: 0.6 },
-          colors: ["#FFFFFF", "#E4E4E7", "#A1A1AA", "#71717A", "#27272A"],
+          colors: ["#25D366", "#FFFFFF", "#E4E4E7", "#A1A1AA", "#27272A"],
         });
-      } catch (err) {
-        // Confetti fallback
-      }
-    }, 1100);
+      } catch (err) {}
+    }, 700);
   };
 
   const resetForm = () => {
     setIsSubmitted(false);
     setName("");
+    setPhone("");
     setEmail("");
     setMessage("");
     setErrors({});
@@ -170,31 +201,59 @@ function ContactContent() {
                   </div>
                 </div>
 
-                {/* 2. Name & Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-mono text-zinc-600 dark:text-zinc-300 mb-1.5 font-semibold">
-                      Your Name / Organization *
-                    </label>
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(e) => {
-                        setName(e.target.value);
-                        if (errors.name) setErrors({ ...errors, name: null });
-                      }}
-                      placeholder="e.g. Alex Morgan (Linear Labs)"
-                      className={`w-full px-4 py-2.5 rounded-xl border text-xs sm:text-sm bg-white dark:bg-[#0E0F14] text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all ${
-                        errors.name
-                          ? "border-rose-500 focus:ring-rose-400"
-                          : "border-zinc-300 dark:border-white/10 focus:ring-white/40"
-                      }`}
-                    />
-                    {errors.name && (
-                      <span className="text-[11px] text-rose-500 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3" /> {errors.name}
-                      </span>
-                    )}
+                {/* 2. Name & Phone & Email */}
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-mono text-zinc-600 dark:text-zinc-300 mb-1.5 font-semibold">
+                        Your Name / Organization *
+                      </label>
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => {
+                          setName(e.target.value);
+                          if (errors.name) setErrors({ ...errors, name: null });
+                        }}
+                        placeholder="e.g. Alex Morgan / Royal Spice"
+                        className={`w-full px-4 py-2.5 rounded-xl border text-xs sm:text-sm bg-white dark:bg-[#0E0F14] text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all ${
+                          errors.name
+                            ? "border-rose-500 focus:ring-rose-400"
+                            : "border-zinc-300 dark:border-white/10 focus:ring-white/40"
+                        }`}
+                      />
+                      {errors.name && (
+                        <span className="text-[11px] text-rose-500 mt-1 flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3" /> {errors.name}
+                        </span>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-zinc-600 dark:text-zinc-300 mb-1.5 font-semibold flex items-center justify-between">
+                        <span>WhatsApp / Phone Number *</span>
+                        <span className="text-[10px] text-emerald-500 font-mono font-bold">Fast Response</span>
+                      </label>
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => {
+                          setPhone(e.target.value);
+                          if (errors.phone) setErrors({ ...errors, phone: null });
+                        }}
+                        placeholder="e.g. 03342850819 or +92 334 2850819"
+                        className={`w-full px-4 py-2.5 rounded-xl border text-xs sm:text-sm bg-white dark:bg-[#0E0F14] text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all ${
+                          errors.phone
+                            ? "border-rose-500 focus:ring-rose-400"
+                            : "border-zinc-300 dark:border-white/10 focus:ring-white/40"
+                        }`}
+                      />
+                      {errors.phone && (
+                        <span className="text-[11px] text-rose-500 mt-1 flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3" /> {errors.phone}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   <div>
@@ -223,24 +282,24 @@ function ContactContent() {
                   </div>
                 </div>
 
-                {/* 3. Budget Range Selection */}
+                {/* 3. Expected Delivery Timeline */}
                 <div>
                   <label className="block text-xs font-mono text-zinc-600 dark:text-zinc-300 mb-1.5 font-semibold">
-                    Target Budget Scope
+                    Desired Delivery Timeline
                   </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
-                    {BUDGET_RANGES.map((b) => (
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    {TIMELINE_PREFERENCES.map((t) => (
                       <button
-                        key={b}
+                        key={t}
                         type="button"
-                        onClick={() => setBudget(b)}
+                        onClick={() => setTimeline(t)}
                         className={`py-2 px-2 rounded-xl text-[11px] font-mono font-medium border text-center transition-all ${
-                          budget === b
+                          timeline === t
                             ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black font-bold"
                             : "border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white"
                         }`}
                       >
-                        {b}
+                        {t}
                       </button>
                     ))}
                   </div>
@@ -250,20 +309,20 @@ function ContactContent() {
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
                     <label className="block text-xs font-mono text-zinc-600 dark:text-zinc-300 font-semibold">
-                      Architecture Requirements / Project Brief *
+                      Project Requirements Brief *
                     </label>
                     <span className="text-[11px] text-zinc-400 font-mono">
                       {message.length} chars
                     </span>
                   </div>
                   <textarea
-                    rows={5}
+                    rows={4}
                     value={message}
                     onChange={(e) => {
                       setMessage(e.target.value);
                       if (errors.message) setErrors({ ...errors, message: null });
                     }}
-                    placeholder="Briefly outline your application architecture, performance goals, design requirements, and desired start dates..."
+                    placeholder="Describe your project requirement (e.g. Restaurant direct WhatsApp ordering system, custom SaaS dashboard, mobile menu customization)..."
                     className={`w-full p-4 rounded-xl border text-xs sm:text-sm bg-white dark:bg-[#0E0F14] text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all resize-y ${
                       errors.message
                         ? "border-rose-500 focus:ring-rose-400"
@@ -277,26 +336,32 @@ function ContactContent() {
                   )}
                 </div>
 
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  size="lg"
-                  variant="primary"
-                  disabled={isSubmitting}
-                  className="w-full"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <RefreshCw className="w-4 h-4 animate-spin" />
-                      <span>Transmitting Payload...</span>
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <Send className="w-4 h-4" />
-                      <span>Transmit Project Brief</span>
-                    </span>
-                  )}
-                </Button>
+                {/* Submit to WhatsApp Action */}
+                <div className="space-y-3">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    variant="primary"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-black font-bold border-0 shadow-[0_0_25px_-5px_rgba(37,211,102,0.4)]"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <RefreshCw className="w-4 h-4 animate-spin" />
+                        <span>Connecting with WhatsApp...</span>
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <MessageCircle className="w-4 h-4 fill-black" />
+                        <span>Transmit Brief to WhatsApp (03342850819)</span>
+                      </span>
+                    )}
+                  </Button>
+
+                  <p className="text-[11px] text-zinc-500 dark:text-zinc-400 text-center font-mono">
+                    Instant sync: Clicking transmit dispatches your project brief directly to Ibrahim&apos;s WhatsApp hotline.
+                  </p>
+                </div>
               </form>
             ) : (
               /* Success Card */
@@ -305,16 +370,25 @@ function ContactContent() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="py-10 text-center space-y-4"
               >
-                <div className="w-16 h-16 rounded-3xl bg-zinc-100 dark:bg-white/10 text-zinc-900 dark:text-white border border-zinc-200 dark:border-white/20 flex items-center justify-center mx-auto shadow-glow-white">
+                <div className="w-16 h-16 rounded-3xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/30 flex items-center justify-center mx-auto shadow-glow-white">
                   <CheckCircle className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                  Payload Dispatched Successfully
+                  Brief Dispatched to WhatsApp!
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-black dark:text-white">{name}</strong>. Your inquiry has been logged into my queue. I will review your technical requirements and respond within 24 hours.
+                  Thank you, <strong className="text-black dark:text-white">{name}</strong>. Your project brief has been formatted and opened in WhatsApp (0334 2850819). Ibrahim will reply promptly.
                 </p>
-                <div className="pt-4">
+                <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center items-center">
+                  <a
+                    href="https://wa.me/923342850819"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-black font-bold text-xs shadow-md"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-black" />
+                    <span>Open WhatsApp Again</span>
+                  </a>
                   <Button size="sm" variant="outline" onClick={resetForm}>
                     Send Another Transmission
                   </Button>
@@ -326,6 +400,55 @@ function ContactContent() {
 
         {/* RIGHT COLUMN: DIRECT PROFESSIONAL CHANNELS */}
         <div className="lg:col-span-5 space-y-5">
+          {/* Direct WhatsApp Hotline Card */}
+          <Card className="p-6 border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.04] to-transparent">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase tracking-wider font-bold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Official WhatsApp Channel
+              </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 font-bold">
+                Online
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 mb-4">
+              <div className="flex items-center gap-2.5 overflow-hidden">
+                <Phone className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                <span className="font-mono text-sm sm:text-base font-bold text-zinc-900 dark:text-white">
+                  0334 2850819
+                </span>
+              </div>
+              <button
+                onClick={copyPhoneToClipboard}
+                className="px-2.5 py-1 rounded-lg bg-white dark:bg-[#181920] text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white border border-zinc-200 dark:border-white/10 shadow-sm flex items-center gap-1 transition-colors"
+                title="Copy WhatsApp Number"
+              >
+                {copiedPhone ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Copied</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            <a
+              href="https://wa.me/923342850819"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-black font-bold text-xs transition-all shadow-md"
+            >
+              <MessageCircle className="w-4 h-4 fill-black" />
+              <span>Direct WhatsApp Chat (0334 2850819)</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </Card>
           {/* One-Click Copy Email Card */}
           <Card className="p-6">
             <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-wider font-bold block mb-2">

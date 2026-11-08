@@ -70,8 +70,12 @@ const TIMELINE_EVENTS = [
     title: "MeetTheDev — Senior Full Stack Engineering & Web Architecture",
     subtitle: "Principal Full Stack Architect & Founder",
     description:
-      "Spearheading the MeetTheDev vision. Engineering high-throughput full-stack applications with Next.js 14, Node.js REST APIs, PostgreSQL, Prisma ORM, bespoke Shadcn UI components, and sub-second Core Web Vitals.",
+      "Spearheading the MeetTheDev vision. Engineering high-throughput full-stack applications with Next.js 14, Node.js REST APIs, PostgreSQL, Prisma ORM, bespoke Shadcn UI components, sub-second Core Web Vitals, and zero-commission direct WhatsApp ordering platforms for local dining & retail businesses.",
     badge: "Active",
+    links: [
+      { label: "Royal Spice Live Demo", href: "https://demo-restaurant-website-theta.vercel.app/" },
+      { label: "HCM Lite Work Live", href: "https://hcm-lite-work-alpha.vercel.app/" },
+    ],
   },
   {
     year: "2024",
