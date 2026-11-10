@@ -42,12 +42,13 @@ const PROJECTS_DATA = [
     fallbackScreenshot:
       "https://s0.wp.com/mshots/v1/https%3A%2F%2Fdemo-restaurant-website-theta.vercel.app%2F?w=1280&h=800",
     tags: [
-      "Zero Commission",
-      "Direct WhatsApp Dispatch",
+      "JavaScript (ES6+)",
       "React 18",
       "Next.js 14",
+      "HTML5 & CSS3",
       "Tailwind CSS",
-      "QR Digital Menu",
+      "Zero Commission",
+      "Direct WhatsApp",
       "Vercel Edge",
     ],
     metrics: [
@@ -62,9 +63,9 @@ const PROJECTS_DATA = [
         "Engineered a lightning-fast, zero-commission web platform that converts mobile visitors into direct paying customers. Features a mobile-first digital food catalog, instant cart drawer with add-ons, and structured receipt generation sent straight to the restaurant's WhatsApp phone number (0334 2850819).",
       techStack: [
         "Next.js 14 App Router for sub-second page transitions & mobile SEO",
-        "React state machines for zero-latency item customizations & quantity increments",
+        "React 18 state machines for zero-latency item customizations & quantity increments",
+        "Semantic HTML5 & modern CSS3/Tailwind responsive styling for smartphones & desktop",
         "Automated WhatsApp URL Encoder generating complete order delivery receipts",
-        "Tailwind CSS responsive design optimized for smartphones, tablets & desktop",
         "Vercel Edge Network for instant worldwide caching and 99.9% uptime",
       ],
       keyFeatures: [
@@ -78,38 +79,47 @@ const PROJECTS_DATA = [
   {
     id: "hcm-lite",
     title: "HCM Lite Work",
-    subtitle: "Enterprise Human Capital Management Platform",
+    subtitle: "Enterprise Human Capital Management UI Platform",
     category: "saas",
-    categoryLabel: "Full-Stack SaaS & Dashboards",
+    categoryLabel: "Frontend SaaS & Dashboards",
     description:
-      "A high-performance workforce management SaaS engineered with full-stack capabilities: role-based auth, automated payroll calculations, dynamic workforce data mutations, real-time analytics, and sub-second Next.js architecture.",
+      "A high-performance workforce management frontend application engineered with dynamic React components, instant live employee filtering, interactive payroll calculation widgets, Supabase-backed authentication, and sub-second Next.js architecture.",
     liveUrl: "https://hcm-lite-work-alpha.vercel.app/",
     githubUrl: "https://github.com/ibrahimfazil-511",
     primaryScreenshot:
       "https://api.microlink.io/?url=https%3A%2F%2Fhcm-lite-work-alpha.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitForTimeout=3000",
     fallbackScreenshot:
       "https://s0.wp.com/mshots/v1/https%3A%2F%2Fhcm-lite-work-alpha.vercel.app%2F?w=1280&h=800",
-    tags: ["Full Stack", "React 18", "Next.js 14", "Node APIs", "PostgreSQL", "Tailwind CSS", "Enterprise Auth", "Vercel Edge"],
+    tags: [
+      "JavaScript",
+      "React 18",
+      "Next.js 14",
+      "Supabase",
+      "Tailwind CSS",
+      "Semantic HTML5",
+      "Responsive UI",
+      "Vercel Edge",
+    ],
     metrics: [
       { label: "Deployment", value: "Vercel Edge" },
-      { label: "Architecture", value: "Full Stack Next.js" },
-      { label: "Security", value: "Enterprise RBAC" },
+      { label: "Frontend", value: "React & Next.js" },
+      { label: "Backend & DB", value: "Supabase Realtime" },
     ],
     architecture: {
       problem:
-        "Traditional enterprise HR platforms are sluggish, disconnected from modern databases, and plagued with high API latency and clumsy multi-step workflows.",
+        "Traditional enterprise HR platforms are sluggish, unintuitive, and plagued with high client latency and clumsy multi-step workflows.",
       solution:
-        "Engineered HCM Lite Work as an end-to-end full-stack SaaS. Leveraged Next.js App Router for server-rendered dashboards, Node.js API handlers for secure workforce mutations, real-time payroll calculation models, and a sleek accessible Shadcn UI interface.",
+        "Engineered HCM Lite Work as a modern, responsive frontend application. Leveraged Next.js App Router for rapid page loads, Supabase client integration for real-time employee data and auth, client-side payroll calculations, and an accessible Shadcn UI interface.",
       techStack: [
-        "Next.js 14 App Router & Server Handlers for data mutations",
-        "Relational schemas & database models for employee lifecycles and payroll audits",
-        "Tailwind CSS & Shadcn UI for atomic design token architecture",
+        "Next.js 14 App Router & React 18 client state machines for instant UI interactions",
+        "Supabase client SDK for realtime database queries and user auth session management",
+        "Semantic HTML5 structure & Tailwind CSS atomic design token architecture",
         "Framer Motion for contextual status micro-interactions",
         "Vercel Cloud for zero-configuration continuous deployments",
       ],
       keyFeatures: [
         "End-to-end workforce directory with multi-parameter live search",
-        "Role-based access control (RBAC) and enterprise authentication flows",
+        "Supabase-backed authentication flows and protected client routes",
         "Automated payroll tax estimation modules & leave request approvals",
         "Responsive macOS-styled desktop dashboard layout",
       ],
@@ -118,40 +128,49 @@ const PROJECTS_DATA = [
   {
     id: "medicure-pharmacy",
     title: "Medicure Pharmacy",
-    subtitle: "Digital Healthcare & Prescription E-Commerce",
+    subtitle: "Digital Healthcare & Prescription E-Commerce UI",
     category: "ecommerce",
-    categoryLabel: "E-Commerce & Healthcare",
+    categoryLabel: "E-Commerce & Healthcare UI",
     description:
-      "A patient-centric pharmaceutical web platform combining dynamic medicine cataloging, prescription verification workflows, server-side cart calculations, and secure digital health order pipelines.",
+      "A patient-centric pharmaceutical web frontend combining dynamic medicine cataloging, prescription verification UI workflows, interactive client-side cart recalculations, and accessible modern CSS styling.",
     liveUrl: "https://medicure-pharmacy-two.vercel.app/",
     githubUrl: "https://github.com/ibrahimfazil-511",
     primaryScreenshot:
       "https://api.microlink.io/?url=https%3A%2F%2Fmedicure-pharmacy-two.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitForTimeout=3000",
     fallbackScreenshot:
       "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmedicure-pharmacy-two.vercel.app%2F?w=1280&h=800",
-    tags: ["Full Stack", "Next.js 14", "React 18", "REST APIs", "Tailwind CSS", "Dynamic Cart", "Healthcare API", "Vercel Edge"],
+    tags: [
+      "JavaScript (ES6+)",
+      "Next.js 14",
+      "React 18",
+      "HTML5 & CSS3",
+      "Tailwind CSS",
+      "Dynamic Cart",
+      "Accessible UI",
+      "Vercel Edge",
+    ],
     metrics: [
       { label: "Deployment", value: "Vercel Edge" },
-      { label: "Stack", value: "Full Stack E-Com" },
+      { label: "Stack", value: "React & Next.js UI" },
       { label: "Lighthouse", value: "99/100 Speed" },
     ],
     architecture: {
       problem:
-        "Online healthcare platforms struggle with real-time medicine inventory synchronization, secure prescription validation, and checkout abandonment caused by slow API roundtrips.",
+        "Online healthcare platforms struggle with confusing medicine navigation, poor mobile ergonomics, and cart checkout abandonment caused by slow UI updates.",
       solution:
-        "Architected Medicure Pharmacy as a full-stack digital pharmacy platform. Implemented server-side inventory querying, optimistic cart state machines, secure prescription upload handlers, and healthcare-grade accessible interfaces.",
+        "Architected Medicure Pharmacy as an accessible, high-performance web frontend. Implemented instant client-side catalog filtering, optimistic cart state machines, intuitive prescription upload UI handlers, and healthcare-grade accessible interfaces.",
       techStack: [
-        "Next.js 14 Route Handlers & RESTful APIs for inventory and cart transactions",
-        "React state machines for predictable optimistic cart actions",
+        "Next.js 14 App Router & React 18 for seamless client-side page transitions",
+        "Optimistic React state machines for predictable instantaneous cart actions",
+        "Semantic HTML5 & modern CSS3/Tailwind design tokens for high readability",
         "Next.js Image components for optimized medicine imagery",
-        "Tailwind CSS layout primitives & accessible modals",
         "Vercel Edge Network for rapid localized content delivery",
       ],
       keyFeatures: [
-        "Dynamic cart drawer with instant subtotal, tax recalculation & inventory sync",
+        "Dynamic cart drawer with instant subtotal, tax recalculation & quantity controls",
         "Prescription verification pipeline and tracking status modal",
-        "Categorized medicine shelf with interactive dosage details & REST queries",
-        "Mobile & desktop responsive checkout funnel with end-to-end security",
+        "Categorized medicine shelf with interactive dosage details & search queries",
+        "Mobile & desktop responsive checkout funnel with accessible form validation",
       ],
     },
   },
@@ -166,17 +185,17 @@ export default function ProjectsPage() {
     { id: "all", label: "All Deployments", count: PROJECTS_DATA.length },
     {
       id: "restaurant",
-      label: "Restaurant & Retail",
+      label: "Restaurant & Retail UI",
       count: PROJECTS_DATA.filter((p) => p.category === "restaurant").length,
     },
     {
       id: "saas",
-      label: "Full-Stack SaaS",
+      label: "Frontend SaaS & Dashboards",
       count: PROJECTS_DATA.filter((p) => p.category === "saas").length,
     },
     {
       id: "ecommerce",
-      label: "E-Commerce & Health",
+      label: "E-Commerce & Healthcare",
       count: PROJECTS_DATA.filter((p) => p.category === "ecommerce").length,
     },
   ];
@@ -199,14 +218,14 @@ export default function ProjectsPage() {
         {/* HEADER SECTION */}
         <div className="max-w-3xl mb-12">
           <Badge variant="outline" className="mb-3">
-            <Cpu className="w-3.5 h-3.5 mr-1" /> Production Deployments
+            <Cpu className="w-3.5 h-3.5 mr-1" /> Production Frontend Deployments
           </Badge>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-            Full-Stack Applications
+            Frontend Web Applications
           </h1>
           <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mt-4 leading-relaxed">
-            Real production full-stack systems deployed live on Vercel. Explore high-definition 1440x900 desktop snapshots,
-            test them directly with the in-place Live Iframe toggle, or review detailed system architecture breakdowns.
+            Real production frontend applications built with JavaScript (ES6+), React 18, Next.js 14, Semantic HTML5, Modern CSS3/Tailwind, and Supabase.
+            Explore high-definition 1440x900 desktop snapshots, test them directly with the in-place Live Iframe toggle, or review detailed frontend architecture breakdowns.
           </p>
         </div>
 

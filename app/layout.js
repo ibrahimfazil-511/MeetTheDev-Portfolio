@@ -5,26 +5,24 @@ import { Dock } from "@/components/Dock";
 import { Footer } from "@/components/Footer";
 
 export const metadata = {
-  title: "MeetTheDev | Ibrahim Aftab — Senior Full Stack Engineer & Web Architect",
+  title: "MeetTheDev | Ibrahim Aftab — Senior Frontend Engineer & Web Developer",
   description:
-    "Official developer portfolio for Ibrahim Aftab (MeetTheDev). Senior Full Stack Engineer & Web Architect specializing in Next.js 14, React 18, Node.js APIs, PostgreSQL, MongoDB, modern JavaScript (ES6+), scalable systems, fluid Framer Motion animations, and production web applications.",
+    "Official developer portfolio for Ibrahim Aftab (MeetTheDev). Senior Frontend Engineer & Web Developer specializing in JavaScript (ES6+), React 18, Next.js 14, Semantic HTML5, Modern CSS3, Tailwind CSS, Supabase, fluid Framer Motion animations, and sub-second Core Web Vitals.",
   keywords: [
     "Ibrahim Aftab",
     "MeetTheDev",
-    "Senior Full Stack Engineer",
-    "Full Stack Web Architect",
-    "Full Stack Developer",
+    "Senior Frontend Engineer",
+    "Frontend Developer",
     "React Developer",
-    "Next.js 14 Developer",
-    "Node.js Developer",
-    "Backend Architecture",
-    "PostgreSQL",
-    "Prisma ORM",
-    "MongoDB",
+    "Next.js Developer",
     "JavaScript Developer",
+    "HTML5 CSS3",
+    "Tailwind CSS",
+    "Supabase Developer",
     "Web Engineering",
     "Shadcn UI",
     "Framer Motion",
+    "UI UX Developer",
   ],
   authors: [{ name: "Ibrahim Aftab", url: "https://github.com/ibrahimfazil-511" }],
   icons: {

@@ -68,7 +68,7 @@ const DOCK_ITEMS = [
   {
     id: "signature",
     title: "Developer Signature",
-    subtitle: "Verified Architect Seal",
+    subtitle: "Verified Frontend Seal",
     href: "/#signature",
     icon: PenTool,
   },

@@ -32,58 +32,58 @@ import { PageTransition } from "@/components/PageTransition";
 
 const SERVICES_LIST = [
   {
-    id: "restaurant-ordering",
-    title: "Zero-Commission Direct Ordering Systems for Restaurants & Retail",
+    id: "frontend-react-nextjs",
+    title: "React 18 & Next.js 14 Frontend Applications",
     description:
-      "Turnkey direct ordering platforms engineered for restaurants and local dining businesses. Eliminate 25-30% aggregator platform fees (like Foodpanda/Deliveroo) with instant WhatsApp order routing, interactive mobile digital menus, and sub-second checkout.",
-    icon: UtensilsCrossed,
-    features: [
-      "Direct-to-WhatsApp Checkout & Order Routing",
-      "Zero Third-Party Commission (Save 25-30% Per Order)",
-      "Mobile-First Digital QR Menu & Categorized Catalog",
-      "Sub-Second Next.js 14 Speed (<0.5s FCP)",
-    ],
-    highlight: "High Client ROI",
-  },
-  {
-    id: "fullstack-nextjs",
-    title: "Full-Stack React 18 & Next.js 14 Applications",
-    description:
-      "Bespoke end-to-end web applications built with Next.js App Router, Server Actions, SSR, and clean modern JavaScript (ES6+). Zero bloat, modular code, and maximum maintainability.",
+      "Bespoke interactive web applications built with Next.js 14 App Router, React 18 hooks, and modern JavaScript (ES6+). Zero bloat, responsive layouts, modular component design, and sub-second performance.",
     icon: Code,
     features: [
-      "Next.js App Router & Server Actions Scaffolding",
-      "SSR / SSG / Edge Runtime Optimization",
-      "Type-Safe Server Mutations & REST APIs",
-      "Responsive Layouts Across All Breakpoints",
+      "Next.js 14 App Router & Server Components",
+      "React 18 Custom Hooks & State Machines",
+      "Modern JavaScript (ES6+) Clean Architecture",
+      "Sub-Second Page Loads & Lazy Hydration",
     ],
     highlight: "Core Specialty",
   },
   {
-    id: "backend-databases",
-    title: "Scalable Backend APIs & Database Architecture",
+    id: "html-css-design-systems",
+    title: "Semantic HTML5 & Modern CSS3 / Tailwind Systems",
     description:
-      "Robust backend services and data modeling. Engineered for high concurrent throughput with relational schemas, document storage, and in-memory caching.",
-    icon: Database,
+      "Pixel-perfect UI design systems crafted with semantic HTML5, modern CSS3 (Flexbox/Grid), and Tailwind CSS. Complete with dark mode, fluid micro-interactions, WCAG 2.1 accessibility, and custom Shadcn UI primitives.",
+    icon: Layout,
     features: [
-      "Node.js & Express RESTful Endpoints",
-      "PostgreSQL & MongoDB Database Schemas",
-      "Prisma ORM Migrations & Query Optimization",
-      "Redis Caching & Secure Session Stores",
+      "Semantic HTML5 & WCAG Accessible Standards",
+      "Tailwind CSS & Modern CSS3 Design Tokens",
+      "Fluid Framer Motion Spring Animations",
+      "Pixel-Perfect Mobile-First Responsive UI",
     ],
-    highlight: "Backend & Data",
+    highlight: "Design & UX",
   },
   {
-    id: "cloud-devops",
-    title: "Cloud Infrastructure, DevOps & Edge Performance",
+    id: "supabase-realtime",
+    title: "Supabase Integration & Real-time Web Apps",
     description:
-      "Transform sluggish web apps into lightning-fast experiences with 99+ Google Lighthouse scores, containerized Docker setups, and global Vercel edge deployment.",
+      "Seamless frontend-to-cloud integration powered by Supabase. Connect your React/Next.js frontend to real-time PostgreSQL databases, authentication providers, media storage, and secure row-level security policies.",
+    icon: Database,
+    features: [
+      "Supabase Realtime Subscriptions & Client Sync",
+      "Supabase User Auth & Protected Client Routes",
+      "PostgreSQL Database Queries & Row Level Security",
+      "RESTful Fetch Pipelines & Error Boundaries",
+    ],
+    highlight: "BaaS & Realtime",
+  },
+  {
+    id: "frontend-performance",
+    title: "Frontend Performance & Core Web Vitals Optimization",
+    description:
+      "Transform sluggish web apps into lightning-fast experiences with 99-100 Google Lighthouse scores, sub-second First Contentful Paint (<0.5s), zero layout shifts (CLS: 0.000), and search engine visibility.",
     icon: Zap,
     features: [
-      "Core Web Vitals Audit & Remediation (<0.6s FCP)",
-      "Docker Containerization & GitHub CI/CD",
-      "Vercel Edge Functions & Cloudflare Caching",
-      "Enterprise Auth (JWT / OAuth) & Security Guards",
+      "Core Web Vitals Audit & Remediation (<0.5s FCP)",
+      "Code Splitting, Lazy Hydration & Image Optimization",
+      "SEO Semantics, Microdata & OpenGraph Cards",
+      "Vercel Edge Network & Production CI/CD",
     ],
     highlight: "Sub-Second Speed",
   },
@@ -191,14 +191,14 @@ export default function ServicesPage() {
         {/* HEADER SECTION */}
         <div className="max-w-3xl mb-16">
           <Badge variant="outline" className="mb-3">
-            <Rocket className="w-3.5 h-3.5 mr-1" /> Client Solutions
+            <Rocket className="w-3.5 h-3.5 mr-1" /> Frontend Solutions
           </Badge>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-            Full-Stack Engineering Services
+            Frontend Engineering Services
           </h1>
           <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mt-4 leading-relaxed">
-            From modern responsive interfaces to high-throughput backend APIs, databases, SaaS dashboards, and cloud deployments.
-            Delivered on time, fully optimized for sub-second Core Web Vitals, and deployed on Vercel.
+            From modern responsive React &amp; Next.js interfaces to semantic HTML5, modern CSS3/Tailwind styling, Supabase real-time cloud data, and sub-second Core Web Vitals.
+            Delivered on time and deployed on Vercel.
           </p>
         </div>
 
@@ -334,22 +334,22 @@ export default function ServicesPage() {
                 <div className="space-y-2.5">
                   {[
                     {
-                      label: "Authentication & Role-Based Access Control",
+                      label: "Supabase Authentication & Protected Routes",
                       state: hasAuth,
                       setter: setHasAuth,
-                      desc: "Secure login, protected dashboard routes, and session tokens",
+                      desc: "User sessions, OAuth sign-in, and protected client-side dashboard guards",
                     },
                     {
-                      label: "Database & Dynamic REST API Integration",
+                      label: "Supabase Realtime Database & API Integration",
                       state: hasDatabase,
                       setter: setHasDatabase,
-                      desc: "Real-time state queries, mutations, and backend sync",
+                      desc: "Instant live table subscriptions, client queries, and optimistic state updates",
                     },
                     {
-                      label: "Production SEO & 99+ Core Web Vitals Audit",
+                      label: "Semantic HTML5, SEO & 100/100 Core Web Vitals",
                       state: hasSEO,
                       setter: setHasSEO,
-                      desc: "OpenGraph cards, semantic sitemaps, and sub-second asset bundling",
+                      desc: "Accessible markup, microdata, sub-second FCP, and zero layout shift",
                     },
                   ].map((addon, idx) => (
                     <div

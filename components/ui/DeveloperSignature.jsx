@@ -340,7 +340,7 @@ export function DeveloperSignature({
             }}
             className="flex-shrink-0 cursor-pointer select-none"
             onClick={onOpenCertificate}
-            title="Inspect Verified Architect Credentials"
+            title="Inspect Verified Frontend Credentials"
           >
             <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-br from-zinc-200 via-zinc-100 to-zinc-300 dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-800 border-2 border-zinc-400/60 dark:border-white/30 shadow-lg flex items-center justify-center text-center group/seal hover:scale-105 transition-transform">
               {/* Spinning Circular Outer Border Pattern */}
@@ -353,7 +353,7 @@ export function DeveloperSignature({
                   VERIFIED
                 </span>
                 <span className="text-[7px] font-mono text-zinc-600 dark:text-zinc-400 font-bold uppercase leading-tight">
-                  FULL STACK ARCHITECT
+                  FRONTEND ENGINEER
                 </span>
                 <span className="text-[6.5px] font-mono text-zinc-500 dark:text-zinc-500 mt-0.5">
                   ★ 2026 ★

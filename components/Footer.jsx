@@ -23,7 +23,7 @@ export function Footer() {
           <div className="md:col-span-5 space-y-4">
             <MeetTheDevLogo size={36} showText={true} />
             <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-sm leading-relaxed">
-              Senior Full Stack Engineer &amp; Web Architect portfolio for Ibrahim Aftab. Engineering high-throughput web applications with Next.js App Router, Node.js APIs, robust database architectures, and fluid Framer Motion animations. Built for sub-second performance across the entire stack.
+              Senior Frontend Engineer &amp; UI Specialist portfolio for Ibrahim Aftab. Engineering high-performance web applications with JavaScript (ES6+), React 18, Next.js 14, semantic HTML5, modern CSS3 &amp; Tailwind, Supabase realtime data, and fluid Framer Motion animations. Built for sub-second Core Web Vitals.
             </p>
 
             {/* Live Availability Status Indicator */}
@@ -32,7 +32,7 @@ export function Footer() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
               </span>
-              <span>Available for Senior Full Stack Roles &amp; Bespoke Contracts</span>
+              <span>Available for Senior Frontend Roles &amp; Web Projects</span>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export function Footer() {
                   href="/about"
                   className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  Architect Journey & Principles
+                  Frontend Journey &amp; Principles
                 </Link>
               </li>
               <li>

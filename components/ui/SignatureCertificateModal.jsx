@@ -18,11 +18,12 @@ import {
 import { MeetTheDevLogo } from "@/components/MeetTheDevLogo";
 
 const VERIFIED_ATTRIBUTES = [
-  { label: "Core Specialization", value: "Senior Full-Stack Engineering & Scalable Web Architecture" },
-  { label: "Backend & Databases", value: "Node.js, REST APIs, PostgreSQL, MongoDB & Prisma ORM" },
-  { label: "Frontend & Design", value: "React 18, Next.js 14, Custom Shadcn UI & Framer Motion" },
-  { label: "Performance Benchmark", value: "Sub-Second FCP (< 0.6s) & 99+ Core Web Vitals" },
-  { label: "Engineered Platforms", value: "HCM Lite Work SaaS & Medicure Pharmacy E-Commerce" },
+  { label: "Core Specialization", value: "Senior Frontend Engineering & Modern Web Development" },
+  { label: "Core Stack", value: "JavaScript (ES6+), React 18, Next.js 14, Semantic HTML5 & CSS3" },
+  { label: "BaaS & Realtime Data", value: "Supabase (PostgreSQL, Realtime Subscriptions, Auth & Storage)" },
+  { label: "Styling & Motion", value: "Tailwind CSS, Custom Shadcn UI Primitives & Framer Motion" },
+  { label: "Performance Benchmark", value: "Sub-Second FCP (< 0.5s) & 100/100 Core Web Vitals" },
+  { label: "Deployed Applications", value: "Royal Spice Restaurant, HCM Lite Work SaaS & Medicure Pharmacy" },
 ];
 
 export function SignatureCertificateModal({ isOpen, onClose }) {
@@ -82,10 +83,10 @@ export function SignatureCertificateModal({ isOpen, onClose }) {
             </div>
 
             <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white mb-2">
-              Architect Signature &amp; Quality Seal
+              Frontend Engineer Signature &amp; Quality Seal
             </h3>
             <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-mono">
-              Attestation of High-Impact Web Architecture &amp; Clean Code Standards
+              Attestation of High-Impact Frontend Architecture &amp; Clean Web Standards
             </p>
           </div>
 

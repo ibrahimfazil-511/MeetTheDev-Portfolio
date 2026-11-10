@@ -33,35 +33,36 @@ import { SignatureCertificateModal } from "@/components/ui/SignatureCertificateM
 import { InteractiveSignaturePad } from "@/components/ui/InteractiveSignaturePad";
 
 const TECH_PILLS = [
-  "Full-Stack Next.js 14",
-  "React 18 & Server Actions",
-  "Node.js & Express",
-  "PostgreSQL & Prisma ORM",
-  "MongoDB & Redis",
-  "RESTful APIs & WebSockets",
-  "Tailwind CSS & Shadcn UI",
+  "JavaScript (ES6+)",
+  "React 18 & Hooks",
+  "Next.js 14 App Router",
+  "Semantic HTML5",
+  "Modern CSS3 & Tailwind",
+  "Supabase (DB & Auth)",
   "Framer Motion Physics",
-  "Docker & Vercel Edge",
+  "Shadcn UI Primitives",
+  "Sub-Second Core Web Vitals",
+  "Vercel Edge Platform",
 ];
 
 const METRICS = [
-  { value: "12+", label: "Production Deployed Apps", desc: "Vercel Global Anycast & Edge" },
+  { value: "12+", label: "Production Frontend Apps", desc: "Vercel Global Edge & Sub-Second FCP" },
   { value: "0% Cut", label: "Zero-Commission Orders", desc: "Direct WhatsApp Client Systems" },
   { value: "< 0.5s", label: "Sub-Second FCP", desc: "Optimized Core Web Vitals" },
-  { value: "99.9%", label: "High-Throughput Uptime", desc: "Predictable, resilient endpoints" },
+  { value: "100/100", label: "Lighthouse Performance", desc: "Semantic HTML5, CSS & Clean JS" },
 ];
 
 const MARQUEE_ITEMS = [
-  "Next.js 14 App Router & Server Actions",
-  "Node.js & Express RESTful APIs",
-  "PostgreSQL & Prisma ORM Schemas",
-  "Sub-Second Core Web Vitals",
-  "MongoDB & Redis In-Memory Caching",
-  "Fluid Framer Motion Animations",
-  "Shadcn UI Design Systems",
-  "Docker Containerization & CI/CD",
-  "Vercel Edge Global Compute",
-  "End-to-End Scalable SaaS Architecture",
+  "Modern JavaScript (ES6+) Core Architecture",
+  "React 18 Component Hierarchies & State Machines",
+  "Next.js 14 App Router, SSR & Server Actions",
+  "Semantic HTML5 & Accessible WCAG Standards",
+  "Tailwind CSS & Modern CSS3 Grid/Flexbox Systems",
+  "Supabase Realtime Database & User Authentication",
+  "Fluid Framer Motion Micro-Interactions",
+  "Sub-Second Core Web Vitals & 99+ Lighthouse Speed",
+  "Responsive Pixel-Perfect Mobile-First Design",
+  "Shadcn UI & Radix Primitives Integration",
 ];
 
 export default function HomePage() {
@@ -89,7 +90,7 @@ export default function HomePage() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-300 dark:border-white/15 shadow-sm backdrop-blur-md">
                   <span className="w-2 h-2 rounded-full bg-black dark:bg-white animate-pulse" />
                   <span className="text-xs sm:text-sm font-mono font-semibold tracking-wide text-zinc-900 dark:text-zinc-200">
-                    Senior Full Stack Engineer & Web Architect
+                    Senior Frontend Engineer &amp; UI Specialist
                   </span>
                 </div>
               </motion.div>
@@ -101,7 +102,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 text-zinc-950 dark:text-white break-words"
               >
-                Engineering Scalable, High-Impact Full-Stack Systems for{" "}
+                Engineering High-Performance Frontend &amp; Web Applications for{" "}
                 <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-400 dark:from-white dark:via-zinc-200 dark:to-zinc-500">
                   MeetTheDev
                 </span>
@@ -116,8 +117,10 @@ export default function HomePage() {
                 className="text-sm sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-4 px-1 sm:px-0"
               >
                 Hi, I&apos;m <strong className="text-zinc-900 dark:text-white font-semibold">Ibrahim Aftab</strong>.
-                I specialize in end-to-end web engineering: high-performance React &amp; Next.js 14 architectures,
-                scalable Node.js / REST APIs, relational &amp; document databases (PostgreSQL, MongoDB, Prisma), custom Shadcn UI systems, and fluid Framer Motion micro-interactions.
+                I craft world-class frontend experiences: modern <strong className="text-zinc-900 dark:text-white">JavaScript (ES6+)</strong>,
+                high-performance <strong className="text-zinc-900 dark:text-white">React 18 &amp; Next.js 14</strong> architectures,
+                semantic <strong className="text-zinc-900 dark:text-white">HTML5 &amp; Modern CSS3 / Tailwind</strong> styling,
+                reactive <strong className="text-zinc-900 dark:text-white">Supabase</strong> cloud integrations, and fluid Framer Motion micro-interactions.
               </motion.p>
 
               {/* Local Business & High-Impact Client Value Proposition */}
@@ -129,7 +132,7 @@ export default function HomePage() {
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-100/90 dark:bg-white/[0.06] border border-zinc-200 dark:border-white/10 text-xs sm:text-sm font-medium text-zinc-800 dark:text-zinc-200 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
-                  <span>Specializing in High-Performance Next.js Web Apps &amp; Direct WhatsApp Ordering Solutions for Local Businesses.</span>
+                  <span>Specializing in Fast, Accessible React/Next.js Frontends, Supabase Integrations &amp; Direct WhatsApp Ordering Solutions.</span>
                 </div>
               </motion.div>
 
@@ -146,7 +149,7 @@ export default function HomePage() {
                   href="/projects"
                   className="w-full sm:w-auto"
                 >
-                  <span>Explore Full-Stack Deployments</span>
+                  <span>Explore Frontend Deployments</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>
                 <Button
@@ -204,13 +207,13 @@ export default function HomePage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <Badge variant="outline" className="mb-2">
-                <TerminalIcon className="w-3.5 h-3.5 mr-1" /> Full-Stack Engineering Session
+                <TerminalIcon className="w-3.5 h-3.5 mr-1" /> Frontend Engineering Session
               </Badge>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-                Inspect End-to-End Architecture
+                Inspect Frontend Architecture &amp; UI Systems
               </h2>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-                Interact with the live developer terminal below to query full-stack specs, backend/frontend architectural choices, and system audits.
+                Interact with the live developer terminal below to query frontend specs, React/Next.js state patterns, CSS3/Tailwind systems, and Supabase integration.
               </p>
             </div>
 
@@ -245,13 +248,13 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
               <div>
                 <Badge variant="outline" className="mb-3">
-                  <Cpu className="w-3.5 h-3.5 mr-1" /> Production Deployments
+                  <Cpu className="w-3.5 h-3.5 mr-1" /> Production Frontend Deployments
                 </Badge>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-                  Flagship SaaS & Applications
+                  Flagship Frontend Applications
                 </h2>
                 <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2 max-w-xl">
-                  Live Vercel applications captured in high-definition 1440x900 desktop resolution with in-place interactive iframe preview.
+                  Live Next.js &amp; React applications with modern CSS3/Tailwind styling and Supabase backends, captured in high-definition 1440x900 desktop resolution with in-place interactive preview.
                 </p>
               </div>
 
@@ -283,7 +286,7 @@ export default function HomePage() {
                     Royal Spice Restaurant
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 mb-5 leading-relaxed">
-                    Direct-to-WhatsApp ordering platform engineered to eliminate 25-30% food aggregator fees. Features an interactive mobile digital menu, instant cart drawer, and sub-second checkout.
+                    Direct-to-WhatsApp ordering platform engineered with pure JavaScript, React, and Next.js to eliminate 25-30% aggregator fees. Features an interactive mobile digital menu, instant cart drawer, and sub-second checkout.
                   </p>
 
                   {/* Browser Mockup with Real Desktop Screenshot + Fallback */}
@@ -298,7 +301,7 @@ export default function HomePage() {
 
                   {/* Tech stack tags */}
                   <div className="flex flex-wrap gap-1.5 mb-5">
-                    {["Zero Commission", "Direct WhatsApp", "Next.js 14", "React 18", "Tailwind CSS", "QR Digital Menu"].map(
+                    {["JavaScript", "React 18", "Next.js 14", "HTML5 & CSS3", "Tailwind CSS", "Direct WhatsApp", "QR Digital Menu"].map(
                       (tech) => (
                         <span
                           key={tech}
@@ -340,7 +343,7 @@ export default function HomePage() {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-white/10 text-zinc-900 dark:text-white border border-zinc-200 dark:border-white/10 text-xs font-mono font-semibold">
-                      Full-Stack SaaS • Workforce Operations
+                      Frontend SaaS • Workforce Operations
                     </span>
                     <span className="text-xs text-zinc-900 dark:text-white font-mono font-medium flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -352,8 +355,8 @@ export default function HomePage() {
                     HCM Lite Work Platform
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 mb-5 leading-relaxed">
-                    A comprehensive, high-throughput Human Capital Management SaaS engineered with full-stack capabilities:
-                    automated payroll calculations, role-based auth, dynamic workforce data mutations, real-time analytics, and sub-second Next.js architecture.
+                    A comprehensive Human Capital Management frontend SaaS engineered with dynamic React components,
+                    real-time employee search filtering, interactive payroll calculation widgets, Supabase-backed authentication, and sub-second Next.js architecture.
                   </p>
 
                   {/* Browser Mockup with Real Desktop Screenshot + Fallback */}
@@ -368,7 +371,7 @@ export default function HomePage() {
 
                   {/* Tech stack tags */}
                   <div className="flex flex-wrap gap-1.5 mb-5">
-                    {["Full Stack", "Next.js 14", "React 18", "Node APIs", "PostgreSQL", "Tailwind CSS", "Enterprise Auth"].map(
+                    {["JavaScript", "React 18", "Next.js 14", "Supabase", "Tailwind CSS", "Semantic HTML5", "Responsive UI"].map(
                       (tech) => (
                         <span
                           key={tech}
@@ -410,7 +413,7 @@ export default function HomePage() {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-white/10 text-zinc-900 dark:text-white border border-zinc-200 dark:border-white/10 text-xs font-mono font-semibold">
-                      Full-Stack Healthcare • E-Commerce
+                      Frontend Healthcare • E-Commerce
                     </span>
                     <span className="text-xs text-zinc-900 dark:text-white font-mono font-medium flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -422,8 +425,8 @@ export default function HomePage() {
                     Medicure Pharmacy
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 mb-5 leading-relaxed">
-                    A modern patient-centric pharmaceutical platform combining dynamic medicine cataloging,
-                    prescription verification workflows, server-side cart calculations, and secure digital health order pipelines.
+                    A patient-centric pharmaceutical web frontend combining dynamic medicine cataloging,
+                    prescription verification UI workflows, interactive client-side cart recalculations, and accessible modern CSS styling.
                   </p>
 
                   {/* Browser Mockup with Real Desktop Screenshot + Fallback */}
@@ -438,7 +441,7 @@ export default function HomePage() {
 
                   {/* Tech stack tags */}
                   <div className="flex flex-wrap gap-1.5 mb-5">
-                    {["Full Stack", "Next.js 14", "React 18", "REST APIs", "Tailwind CSS", "Dynamic Cart", "Healthcare API"].map(
+                    {["JavaScript", "React 18", "Next.js 14", "HTML5 & CSS3", "Tailwind CSS", "Dynamic Cart", "Accessible UI"].map(
                       (tech) => (
                         <span
                           key={tech}
@@ -483,13 +486,13 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <Badge variant="outline" className="mb-3">
-                <Layers className="w-3.5 h-3.5 mr-1" /> Core Architectural Tenets
+                <Layers className="w-3.5 h-3.5 mr-1" /> Core Frontend Tenets
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-                Architectural Principles
+                Frontend Architectural Principles
               </h2>
               <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
-                Every application is engineered with strict attention to sub-second latency, modular API design, normalized database schemas, and friction-free user journeys.
+                Every frontend application is engineered with strict attention to sub-second Core Web Vitals, semantic HTML5 structure, modern CSS3/Tailwind styling, and reactive Supabase cloud integration.
               </p>
             </div>
 
@@ -499,10 +502,10 @@ export default function HomePage() {
                   <Zap className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">
-                  Full-Stack Sub-Second Speed
+                  Sub-Second Speed &amp; Web Vitals
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  Sub-second loading times with Next.js 14 App Router optimizations, edge caching, server actions, and optimized database queries.
+                  Sub-second loading times (&lt;0.5s FCP) with Next.js 14 App Router optimizations, code-splitting, lazy hydration, and edge asset caching.
                 </p>
               </Card>
 
@@ -511,10 +514,10 @@ export default function HomePage() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">
-                  Fluid Micro-Interactions &amp; UI
+                  Semantic HTML5 &amp; Modern CSS3
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  Tailored Framer Motion layout transitions, spring physics, and accessible Shadcn UI primitives that create seamless user delight.
+                  Pixel-perfect responsive interfaces built with Tailwind CSS, atomic utility tokens, WCAG accessible primitives, and fluid Framer Motion spring physics.
                 </p>
               </Card>
 
@@ -523,10 +526,10 @@ export default function HomePage() {
                   <Code2 className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">
-                  Resilient APIs &amp; Robust Schemas
+                  Reactive State &amp; Supabase Integration
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  Scalable Node.js / Next.js RESTful endpoints, relational PostgreSQL / Prisma models, and secure role-based authentication protocols.
+                  Clean modern JavaScript (ES6+), custom React hooks, optimistic UI updates, and seamless real-time Supabase database &amp; authentication pipelines.
                 </p>
               </Card>
             </div>
@@ -542,13 +545,13 @@ export default function HomePage() {
 
               <div className="relative z-10 max-w-2xl mx-auto">
                 <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white text-xs font-mono font-semibold mb-4 border border-white/20">
-                  Ready to Architect Your Next Production Platform?
+                  Ready to Elevate Your Frontend Experience?
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
-                  Let&apos;s Transform Your Vision Into a Production Reality.
+                  Let&apos;s Transform Your Vision Into a Pixel-Perfect Reality.
                 </h2>
                 <p className="text-xs sm:text-base text-zinc-300 mb-8 leading-relaxed px-1 sm:px-0">
-                  Whether you need a high-converting web application, a full-stack SaaS platform, scalable REST APIs, or database architecture, I&apos;m ready to engineer it.
+                  Whether you need a high-converting React or Next.js web application, an interactive Supabase-powered dashboard, or accessible HTML5/CSS3 design systems, I&apos;m ready to craft it.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
@@ -558,7 +561,7 @@ export default function HomePage() {
                     href="/contact"
                     className="w-full sm:w-auto"
                   >
-                    <span>Start a Project With Ibrahim</span>
+                    <span>Hire Ibrahim for Frontend Role</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                   <Button
@@ -567,7 +570,7 @@ export default function HomePage() {
                     href="/about"
                     className="w-full sm:w-auto"
                   >
-                    <span>Read Architect Story</span>
+                    <span>Read Frontend Story</span>
                   </Button>
                 </div>
               </div>

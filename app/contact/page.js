@@ -31,9 +31,10 @@ import { Card } from "@/components/ui/Card";
 import { PageTransition } from "@/components/PageTransition";
 
 const SUBJECT_OPTIONS = [
+  "Senior Frontend Role",
+  "React & Next.js Web App",
+  "Supabase & Frontend Integration",
   "Restaurant Ordering System",
-  "Custom SaaS / Web App",
-  "Senior Full Stack Role",
   "General Inquiry",
 ];
 
@@ -168,7 +169,7 @@ function ContactContent() {
           Initiate Engineering Collaboration
         </h1>
         <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mt-4 leading-relaxed">
-          Looking for a Senior Full Stack Engineer &amp; Architect to design end-to-end resilient systems, scalable APIs, and high-performance React/Next.js interfaces? Send a brief below.
+          Looking to hire a Senior Frontend Engineer &amp; UI Specialist skilled in modern JavaScript (ES6+), React 18, Next.js 14, semantic HTML5, modern CSS3 / Tailwind, and Supabase? Send a direct brief below.
         </p>
       </div>
 
@@ -322,7 +323,7 @@ function ContactContent() {
                       setMessage(e.target.value);
                       if (errors.message) setErrors({ ...errors, message: null });
                     }}
-                    placeholder="Describe your project requirement (e.g. Restaurant direct WhatsApp ordering system, custom SaaS dashboard, mobile menu customization)..."
+                    placeholder="Describe your project or role requirements (e.g. Frontend Engineer role, React & Next.js frontend application, Supabase real-time integration, responsive UI system)..."
                     className={`w-full p-4 rounded-xl border text-xs sm:text-sm bg-white dark:bg-[#0E0F14] text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all resize-y ${
                       errors.message
                         ? "border-rose-500 focus:ring-rose-400"

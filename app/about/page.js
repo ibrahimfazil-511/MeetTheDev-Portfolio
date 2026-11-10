@@ -31,46 +31,40 @@ import { InteractiveSignaturePad } from "@/components/ui/InteractiveSignaturePad
 
 // Skill Definitions
 const SKILLS_DATA = [
-  // Frontend
-  { name: "React 18", category: "frontend", level: 96, exp: "Concurrent Features / SSR / Hooks", icon: "⚛️" },
-  { name: "Next.js 14 (App Router)", category: "frontend", level: 95, exp: "Server Components & Server Actions", icon: "▲" },
-  { name: "JavaScript (ES6+)", category: "frontend", level: 98, exp: "Pure Core Modern Language", icon: "⚡" },
-  { name: "Tailwind CSS", category: "frontend", level: 96, exp: "Design Systems & Atomic Tokens", icon: "🎨" },
-  { name: "Shadcn UI", category: "frontend", level: 94, exp: "Radix Primitives & Accessible ARIA", icon: "🧩" },
-  { name: "Semantic HTML5 / CSS3", category: "frontend", level: 97, exp: "WCAG Accessibility & Modern Layouts", icon: "🌐" },
+  // Core Frontend
+  { name: "JavaScript (ES6+)", category: "frontend", level: 98, exp: "Async/Await, Closures, DOM APIs & ES Modules", icon: "⚡" },
+  { name: "React 18", category: "frontend", level: 97, exp: "Components, Custom Hooks, State Machines & Context", icon: "⚛️" },
+  { name: "Next.js 14 (App Router)", category: "frontend", level: 96, exp: "Server & Client Components, SSR & Routing", icon: "▲" },
 
-  // Backend
-  { name: "Node.js & Express", category: "backend", level: 94, exp: "Asynchronous APIs & Middleware", icon: "🟢" },
-  { name: "Next.js Route Handlers", category: "backend", level: 95, exp: "Edge & Serverless API Endpoints", icon: "▲" },
-  { name: "RESTful Architecture", category: "backend", level: 96, exp: "Scalable CRUD & API Contracts", icon: "🔌" },
-  { name: "WebSockets & Events", category: "backend", level: 90, exp: "Real-Time Bidirectional Streams", icon: "📡" },
-  { name: "JWT & OAuth Security", category: "backend", level: 93, exp: "RBAC & Protected Route Guards", icon: "🔒" },
+  // HTML & CSS Styling
+  { name: "Semantic HTML5", category: "styling", level: 98, exp: "WCAG Accessibility, Clean Semantic Trees & SEO", icon: "🌐" },
+  { name: "Modern CSS3", category: "styling", level: 97, exp: "Flexbox, CSS Grid, Custom Properties & Transitions", icon: "🎨" },
+  { name: "Tailwind CSS", category: "styling", level: 98, exp: "Atomic Tokens, Custom Themes & Responsive Variants", icon: "💨" },
 
-  // Database
-  { name: "PostgreSQL", category: "database", level: 92, exp: "Relational Schemas & Indexing", icon: "🐘" },
-  { name: "Prisma ORM", category: "database", level: 94, exp: "Type-Safe Migrations & Relations", icon: "💎" },
-  { name: "MongoDB & Mongoose", category: "database", level: 91, exp: "Document Stores & Aggregations", icon: "🍃" },
-  { name: "Redis Caching", category: "database", level: 89, exp: "In-Memory Store & Rate Limiting", icon: "⚡" },
+  // Supabase & Data
+  { name: "Supabase Realtime DB", category: "supabase", level: 94, exp: "Postgres Client, Realtime Subscriptions & RLS", icon: "⚡" },
+  { name: "Supabase Auth & Storage", category: "supabase", level: 93, exp: "User Sessions, OAuth & Protected Client Routes", icon: "🔒" },
+  { name: "RESTful APIs & Fetch", category: "supabase", level: 96, exp: "Asynchronous Data Fetching & Error Handling", icon: "🔌" },
+  { name: "PostgreSQL Queries", category: "supabase", level: 90, exp: "Relational Tables, Supabase Studio & Filters", icon: "🐘" },
 
-  // Cloud & DevOps
-  { name: "Docker", category: "cloud", level: 88, exp: "Containerized Microservices", icon: "🐳" },
-  { name: "Vercel Edge Platform", category: "cloud", level: 96, exp: "Anycast Deploy & Serverless Edge", icon: "▲" },
-  { name: "Git & GitHub CI/CD", category: "cloud", level: 95, exp: "Trunk-Based / Release Pipelines", icon: "🌿" },
-  { name: "Core Web Vitals", category: "cloud", level: 96, exp: "99+ Lighthouse & Speed Audits", icon: "🔍" },
+  // Motion & UI Systems
+  { name: "Framer Motion", category: "motion", level: 96, exp: "Spring Physics, Layout FX & Micro-Interactions", icon: "✨" },
+  { name: "Shadcn UI & Radix", category: "motion", level: 95, exp: "Headless Accessible Primitives & Modals", icon: "🧩" },
+  { name: "Responsive & Mobile UX", category: "motion", level: 98, exp: "Pixel-Perfect Layouts & Touch Optimization", icon: "📱" },
 
-  // Animations
-  { name: "Framer Motion", category: "animations", level: 95, exp: "Layout FX & Spring Physics", icon: "✨" },
-  { name: "Micro-Interactions", category: "animations", level: 92, exp: "Haptic Feel & Gestures", icon: "🪄" },
-  { name: "Studio Lighting FX", category: "animations", level: 93, exp: "Dynamic Spotlights", icon: "🌌" },
+  // Performance & Tools
+  { name: "Core Web Vitals", category: "tools", level: 97, exp: "Sub-Second FCP, INP & 99+ Lighthouse Optimization", icon: "🚀" },
+  { name: "Git & GitHub CI/CD", category: "tools", level: 95, exp: "Version Control, Pull Requests & Trunk Workflow", icon: "🌿" },
+  { name: "Vercel Edge Platform", category: "tools", level: 96, exp: "Instant Global CDN & Edge Deployment", icon: "▲" },
 ];
 
 const TIMELINE_EVENTS = [
   {
     year: "Present",
-    title: "MeetTheDev — Senior Full Stack Engineering & Web Architecture",
-    subtitle: "Principal Full Stack Architect & Founder",
+    title: "MeetTheDev — Senior Frontend Engineering & UI Specialist",
+    subtitle: "Lead Frontend Developer & Founder",
     description:
-      "Spearheading the MeetTheDev vision. Engineering high-throughput full-stack applications with Next.js 14, Node.js REST APIs, PostgreSQL, Prisma ORM, bespoke Shadcn UI components, sub-second Core Web Vitals, and zero-commission direct WhatsApp ordering platforms for local dining & retail businesses.",
+      "Spearheading the MeetTheDev frontend engineering vision. Crafting ultra-fast web experiences with JavaScript (ES6+), React 18, Next.js 14, semantic HTML5, modern CSS3 & Tailwind, Supabase realtime database integrations, and zero-commission direct WhatsApp ordering platforms for local dining & retail businesses.",
     badge: "Active",
     links: [
       { label: "Royal Spice Live Demo", href: "https://demo-restaurant-website-theta.vercel.app/" },
@@ -79,10 +73,10 @@ const TIMELINE_EVENTS = [
   },
   {
     year: "2024",
-    title: "Flagship Full-Stack Deployments on Vercel Edge",
+    title: "Production Frontend Deployments on Vercel Edge",
     subtitle: "HCM Lite Work SaaS & Medicure Pharmacy",
     description:
-      "Engineered and launched two production applications: HCM Lite Work (Human Capital Management SaaS with live workforce filtering, database models, and automated payroll calculations) and Medicure Pharmacy (dynamic healthcare e-commerce with server-side inventory and prescription workflows).",
+      "Engineered and launched two production frontend applications: HCM Lite Work (Human Capital Management SaaS with instant workforce filtering, responsive data tables, and dynamic payroll calculation widgets) and Medicure Pharmacy (accessible digital healthcare e-commerce with reactive cart state management and mobile-optimized checkout).",
     badge: "Milestone",
     links: [
       { label: "HCM Lite Work Live", href: "https://hcm-lite-work-alpha.vercel.app/" },
@@ -91,10 +85,10 @@ const TIMELINE_EVENTS = [
   },
   {
     year: "2023",
-    title: "Full-Stack Foundations & Distributed Systems",
-    subtitle: "Advanced Web & Backend Engineering",
+    title: "Frontend Foundations & Modern Web Standards",
+    subtitle: "Pure JavaScript (ES6+), React & CSS Architecture",
     description:
-      "Mastered API design, relational schema normalization, Framer Motion animations, headless UI paradigms, state management, and edge compute performance.",
+      "Deeply mastered core JavaScript algorithms, DOM manipulation, component hierarchies, state management machines, modern CSS Grid/Flexbox, WCAG 2.1 accessibility, and fluid Framer Motion animations.",
     badge: "Foundation",
   },
 ];
@@ -106,11 +100,11 @@ export default function AboutPage() {
 
   const filterTabs = [
     { id: "all", label: "All Skills", count: SKILLS_DATA.length },
-    { id: "frontend", label: "Frontend", count: SKILLS_DATA.filter((s) => s.category === "frontend").length },
-    { id: "backend", label: "Backend & APIs", count: SKILLS_DATA.filter((s) => s.category === "backend").length },
-    { id: "database", label: "Databases", count: SKILLS_DATA.filter((s) => s.category === "database").length },
-    { id: "cloud", label: "DevOps & Cloud", count: SKILLS_DATA.filter((s) => s.category === "cloud").length },
-    { id: "animations", label: "Motion", count: SKILLS_DATA.filter((s) => s.category === "animations").length },
+    { id: "frontend", label: "JavaScript & React", count: SKILLS_DATA.filter((s) => s.category === "frontend").length },
+    { id: "styling", label: "HTML5 & CSS3", count: SKILLS_DATA.filter((s) => s.category === "styling").length },
+    { id: "supabase", label: "Supabase & Data", count: SKILLS_DATA.filter((s) => s.category === "supabase").length },
+    { id: "motion", label: "Motion & UI", count: SKILLS_DATA.filter((s) => s.category === "motion").length },
+    { id: "tools", label: "Performance & Tools", count: SKILLS_DATA.filter((s) => s.category === "tools").length },
   ];
 
   const filteredSkills =
@@ -124,18 +118,18 @@ export default function AboutPage() {
         {/* HEADER SECTION */}
         <div className="max-w-3xl mb-16">
           <Badge variant="outline" className="mb-3">
-            <UserCheck className="w-3.5 h-3.5 mr-1" /> Architect Profile
+            <UserCheck className="w-3.5 h-3.5 mr-1" /> Frontend Profile
           </Badge>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
             Ibrahim Aftab
           </h1>
           <p className="text-lg sm:text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-400 dark:from-white dark:via-zinc-200 dark:to-zinc-400 mt-2">
-            Senior Full Stack Engineer &amp; Web Architect
+            Senior Frontend Engineer &amp; UI Specialist
           </p>
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 mt-4 leading-relaxed">
-            I architect modern, resilient, end-to-end web applications.
-            Spanning high-throughput backend APIs, database schema modeling (PostgreSQL, MongoDB, Prisma), and polished React/Next.js 14 interfaces,
-            my mission is to deliver complete digital products that balance aesthetic refinement with scalable engineering rigor.
+            I craft modern, accessible, sub-second web applications.
+            Specializing in pure JavaScript (ES6+), React 18, Next.js 14, semantic HTML5, modern CSS3 &amp; Tailwind, and reactive Supabase cloud integrations,
+            my mission is to build engaging digital products that combine aesthetic beauty with peak frontend performance and clean code.
           </p>
         </div>
 
@@ -150,25 +144,27 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
-                    The MeetTheDev Architectural Doctrine
+                    The MeetTheDev Frontend Doctrine
                   </h3>
                   <span className="text-xs text-zinc-500 font-mono">
-                    End-to-End Resilience • Sub-Second Latency • Frictionless Interactions
+                    Pixel Precision • Sub-Second Speed • Frictionless Reactive UI
                   </span>
                 </div>
               </div>
 
               <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
                 <p>
-                  As a Senior Full Stack Engineer &amp; Architect, I believe software is most effective when backend performance and frontend elegance work in unison. What distinguishes my work
-                  is the relentless commitment to eliminating latency across the entire stack: from optimized SQL queries and edge caching to instantaneous client-side UI updates.
+                  As a Senior Frontend Engineer &amp; UI Specialist, I believe exceptional web applications are born at the intersection of aesthetic refinement and technical speed. What distinguishes my work
+                  is the relentless commitment to eliminating client-side friction: from semantic HTML5 foundations and accessible modern CSS3/Tailwind architectures to instant React state updates and sub-second Core Web Vitals.
                 </p>
                 <p>
-                  Through **MeetTheDev**, I construct enterprise platforms like{" "}
-                  <strong className="text-zinc-900 dark:text-white">HCM Lite Work</strong> and
+                  Through **MeetTheDev**, I craft responsive web applications like{" "}
+                  <strong className="text-zinc-900 dark:text-white">Royal Spice Restaurant</strong> (zero-commission ordering),
+                  enterprise dashboards like{" "}
+                  <strong className="text-zinc-900 dark:text-white">HCM Lite Work</strong>, and
                   e-commerce solutions like{" "}
                   <strong className="text-zinc-900 dark:text-white">Medicure Pharmacy</strong>,
-                  combining robust backend APIs with React Server Components, Next.js App Router, and Framer Motion micro-interactions.
+                  leveraging React 18, Next.js 14 App Router, Supabase real-time cloud data, and fluid Framer Motion micro-interactions.
                 </p>
               </div>
             </div>
@@ -176,15 +172,15 @@ export default function AboutPage() {
             <div className="pt-6 mt-6 border-t border-zinc-100 dark:border-white/10 flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 dark:text-zinc-300">
                 <CheckCircle className="w-4 h-4 text-zinc-900 dark:text-white" />
-                End-to-End Scalability
+                Pure JavaScript &amp; React 18
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 dark:text-zinc-300">
                 <CheckCircle className="w-4 h-4 text-zinc-900 dark:text-white" />
-                Modern Node &amp; Next.js 14
+                Semantic HTML5 &amp; Modern CSS3
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 dark:text-zinc-300">
                 <CheckCircle className="w-4 h-4 text-zinc-900 dark:text-white" />
-                Fluid Framer Motion Physics
+                Supabase Realtime &amp; Auth
               </div>
             </div>
           </Card>
@@ -344,13 +340,13 @@ export default function AboutPage() {
         <section className="mb-20">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <Badge variant="outline" className="mb-2">
-              <Award className="w-3.5 h-3.5 mr-1" /> Architect Authenticity
+              <Award className="w-3.5 h-3.5 mr-1" /> Frontend Authenticity
             </Badge>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-              Developer Signature & Code Guarantee
+              Developer Signature &amp; Frontend Guarantee
             </h2>
             <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1 font-mono">
-              Every production system engineered by Ibrahim Aftab is sealed with rigorous Core Web Vitals audits and modular maintainability.
+              Every user interface engineered by Ibrahim Aftab is sealed with 100/100 Core Web Vitals audits, semantic HTML5 markup, and responsive elegance.
             </p>
           </div>
 
